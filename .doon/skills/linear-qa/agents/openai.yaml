@@ -1,4 +1,0 @@
-interface:
-  display_name: "Linear QA"
-  short_description: "여러 제품의 Linear QA 실행과 버그 연결을 일관되게 관리합니다."
-  default_prompt: "Use $linear-qa to organize this QA run in Linear with concise cases, reusable labels, review status, and linked development bugs."

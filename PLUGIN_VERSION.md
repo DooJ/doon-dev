@@ -1,6 +1,6 @@
 # DooN Development 플러그인 버전
 
-현재 버전: `v3.0.0`
+현재 버전: `v3.1.0`
 
 ## 출처
 
@@ -17,10 +17,13 @@
 | `P7` | 자체 생성 | 2026-09-28 사용자 요청 | canonical 내부 폴더를 `.doon`으로 전환하고 이전 경로 폴백을 제거 |
 | `P8` | 외부 참고 | [Claude Code 플러그인 문서](https://code.claude.com/docs/en/plugins), 2026-09-28 조회 | `.claude-plugin/plugin.json`, `skills/` 기반 Claude 네이티브 패키징 |
 
+| `P9` | 자체 생성 | 2026-09-28 사용자 승인 DooN Core 통합 설계 | 개별 플러그인의 `.doon` 의존 제거, portable manifest와 Core export 계약 |
+
 ## 버전 이력
 
 | 버전 | 날짜 | 변경 요약 | 출처 ID |
 |---|---|---|---|
+| `v3.1.0` | 2026-09-28 | Core 없이 독립 설치할 수 있도록 portable manifest를 추가하고 플러그인 내부의 legacy `.doon` 복제 구조를 제거했다. | `P9` |
 | `v3.0.0` | 2026-09-28 | canonical 내부 경로를 `.doon`으로 전환하고 Claude Code 네이티브 플러그인 manifest를 추가했다. | `P7`, `P8` |
 | `v2.0.1` | 2026-09-24 | 플러그인 설명과 포함 스킬의 사용자 노출 제품명을 DooN으로 통일했다. | `P6` |
 | `v2.0.0` | 2026-09-24 | plugin ID와 저장소 식별자를 `doon-dev`와 `DooJ/doon-core` 체계로 전환했다. 기존 설치와 구분되는 breaking 변경이다. | `P5` |

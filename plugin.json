@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "doon-dev",
+  "version": "3.1.0",
+  "description": "DooN의 개발 분석, 구현, 리뷰, 오류 대응과 관측 워크플로우를 제공하는 개발 스킬 모음입니다.",
+  "author": {
+    "name": "DooJ",
+    "url": "https://github.com/DooJ"
+  },
+  "repository": "https://github.com/DooJ/doon-dev",
+  "keywords": [
+    "development",
+    "review",
+    "android",
+    "kotlin",
+    "sentry",
+    "linear"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "DooN Development",
+        "shortDescription": "개발 분석·구현·리뷰 스킬",
+        "longDescription": "DooN의 개발 분석, 구현, 리뷰, 오류 대응과 관측 워크플로우를 제공하는 개발 스킬 모음입니다.",
+        "developerName": "DooJ",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Interactive",
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "이 프로젝트를 분석하고 구현 계획을 세워줘",
+          "현재 변경사항을 코드 리뷰해줘",
+          "오류 원인을 찾고 수정해줘"
+        ],
+        "brandColor": "#2563EB"
+      }
+    }
+  }
+}

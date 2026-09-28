@@ -1,4 +1,0 @@
-interface:
-  display_name: "Development Orchestrator"
-  short_description: "개발 요청 규모와 도메인에 맞춰 직접 실행, 디자인-빌드, 병렬 위임, QA 보조를 선택합니다."
-  default_prompt: "Use $development-orchestrator to route this development request into direct implementation, specialist mode, design-build, parallel delegation, or review assist."

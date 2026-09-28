@@ -52,7 +52,7 @@
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "display_name": "DooN Development"
   }
 }
