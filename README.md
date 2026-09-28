@@ -10,7 +10,7 @@
 
 # DooN Development
 
-**DooN Development**는 코드베이스 이해부터 구현, 리뷰, 오류 대응, 배포 관측까지 개발의 전체 흐름을 연결하는 공개 Codex 플러그인입니다. 플러그인 전체를 켜거나 끌 수 있으며, 설치 후 필요한 스킬만 개별적으로 활성화할 수 있습니다.
+**DooN Development**는 코드베이스 이해부터 구현, 리뷰, 오류 대응, 배포 관측까지 개발의 전체 흐름을 연결하는 공개 Codex·Claude Code 플러그인입니다. 플러그인 전체를 켜거나 끌 수 있으며, 설치 후 필요한 스킬만 개별적으로 활성화할 수 있습니다.
 
 `DO:ON`의 두 코어는 개발자의 판단과 에이전트의 실행을 뜻합니다. 코드 변경은 분석에서 시작해 검증과 운영 관측으로 닫히며, 각 스킬은 이 흐름의 한 단계를 명확하게 담당합니다.
 
@@ -34,6 +34,7 @@
 ## 구조
 
 - `.codex-plugin/plugin.json`: 플러그인 메타데이터와 `skills/` 등록
+- `.claude-plugin/plugin.json`: Claude Code 네이티브 플러그인 메타데이터
 - `skills/<이름>/`: 실제 스킬 원본, 버전, references, scripts, assets
 - `catalog.json`: 저장소와 스킬 소유권을 확인하는 카탈로그
 - `PLUGIN_VERSION.md`: 플러그인 단위 변경 이력과 출처

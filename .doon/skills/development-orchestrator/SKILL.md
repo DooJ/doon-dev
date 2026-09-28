@@ -7,7 +7,7 @@ description: "앱·웹·백엔드·디자인·QA가 섞인 복합 개발, 디자
 
 이 스킬은 개발 실행 방식의 라우터이자 통합 책임자다. 하네스 회의나 장기 기억 승격을 기본 생성하지 않고, `implementation_loop.md` 위에서 이번 개발 요청을 어떤 모드로 처리할지 정하고 끝까지 구현, 통합, 검증한다.
 
-- `.agentic_base/workflows/implementation_loop.md`를 따른다.
+- `.doon/workflows/implementation_loop.md`를 따른다.
 - Android/Kotlin, UI, 에러, 리뷰, 문서 갱신은 기존 도메인 스킬을 필요한 만큼만 연결한다.
 - 페르소나는 말투 캐릭터가 아니라 판단 기준과 위험 감지 렌즈다.
 - 단일 업무에서는 실제 서브에이전트를 소환하지 않는다. 메인 에이전트가 해당 전문 렌즈를 직접 적용한다.

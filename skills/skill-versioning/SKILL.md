@@ -19,8 +19,8 @@ DooN 원본의 스킬을 생성하거나 `SKILL.md`, reference, 도구, asset을
 1. `agentic-root-manager`와 같은 순서로 해석한 `AGENTIC_ROOT`를 확인하고 원본 스킬을 수정한다. 생성 어댑터는 직접 수정하지 않는다.
 2. 새 스킬이면 `VERSION.md`를 만든다. 기존 스킬이면 실제 변경과 현재 버전을 확인하고 새 버전 행을 위에 추가한다. 호환되는 교정·문서 수정은 patch, 기존 사용 흐름을 유지하는 기능 추가는 minor, 호출·입출력 계약을 깨는 변경은 major를 올린다. 외부 자료가 중간에 추가되면 그 버전 행에 새 출처 ID를 명시한다.
 3. 출처 표를 갱신한다. 직접 작성한 범위, 참고해 재구성한 범위, 원문 그대로 도입한 범위를 분리한다. 원본 내용과 라이선스 파일을 함께 배포해야 하는 경우 이를 보존한다. 경위가 불명확하면 `기원 미확인`으로 적고 추후 확인 대상으로 남긴다.
-4. `python3 .agentic_base/scripts/skill_versions.py fingerprint <skill-name> --root .`의 값을 현재 내용 SHA-256에 기록한다. `VERSION.md` 자체는 지문에서 제외한다.
-5. 스킬 자체 검증과 `python3 .agentic_base/scripts/skill_versions.py check --root .`를 실행한다. 어댑터 생성이 필요한 변경이면 생성 후 `--check`도 실행한다. 출처·버전 기록이 빠진 상태를 완료로 보고하지 않는다.
+4. `python3 .doon/scripts/skill_versions.py fingerprint <skill-name> --root .`의 값을 현재 내용 SHA-256에 기록한다. `VERSION.md` 자체는 지문에서 제외한다.
+5. 스킬 자체 검증과 `python3 .doon/scripts/skill_versions.py check --root .`를 실행한다. 어댑터 생성이 필요한 변경이면 생성 후 `--check`도 실행한다. 출처·버전 기록이 빠진 상태를 완료로 보고하지 않는다.
 
 ## VERSION.md 형식
 
