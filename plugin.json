@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "doon-dev",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "DooN의 개발 분석, 구현, 리뷰, 오류 대응과 관측 워크플로우를 제공하는 개발 스킬 모음입니다.",
   "author": {
     "name": "DooJ",

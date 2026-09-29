@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULE_PATH = ROOT / "skills/skill-versioning/scripts/skill_versions.py"
+MODULE_PATH = ROOT / "skills/dev-skill-versioning/scripts/skill_versions.py"
 
 
 def load_module():

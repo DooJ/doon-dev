@@ -1,5 +1,5 @@
 ---
-name: skill-versioning
+name: dev-skill-versioning
 description: Use when 이 플러그인 저장소의 스킬을 새로 만들거나 SKILL.md, reference, script, asset을 수정·가져온 뒤 버전·출처·내용 지문을 기록하고 검증해야 할 때 사용합니다. 일반적인 스킬 실행에는 사용하지 않습니다.
 ---
 
@@ -24,13 +24,13 @@ description: Use when 이 플러그인 저장소의 스킬을 새로 만들거�
 4. 저장소 루트에서 지문을 계산해 `내용 SHA-256`에 기록한다.
 
 ```bash
-python3 skills/skill-versioning/scripts/skill_versions.py fingerprint <skill-name> --root .
+python3 skills/dev-skill-versioning/scripts/skill_versions.py fingerprint <skill-name> --root .
 ```
 
 5. 저장소 전체의 스킬 기록, catalog 등록, 플러그인 버전 정합성을 검사한다.
 
 ```bash
-python3 skills/skill-versioning/scripts/skill_versions.py check --root .
+python3 skills/dev-skill-versioning/scripts/skill_versions.py check --root .
 ```
 
 6. 플러그인 manifest 자체도 검증하고 변경 파일을 검토한다.

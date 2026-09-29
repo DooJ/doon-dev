@@ -44,8 +44,8 @@
       "path": "skills/skill-inspector"
     },
     {
-      "name": "skill-versioning",
-      "path": "skills/skill-versioning"
+      "name": "dev-skill-versioning",
+      "path": "skills/dev-skill-versioning"
     }
   ],
   "runtime_contract": {
@@ -85,13 +85,13 @@
       "label": "스킬 품질",
       "skills": [
         "skill-inspector",
-        "skill-versioning"
+        "dev-skill-versioning"
       ]
     }
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "4.1.0",
+    "version": "4.1.1",
     "display_name": "DooN Development"
   }
 }
