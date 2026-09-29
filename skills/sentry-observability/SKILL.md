@@ -121,7 +121,9 @@ Sentry event 수집과 업무 보고를 같은 것으로 취급하지 않는다.
 - 기본 incident 리포트 원본은 canonical Linear 이슈 본문과 시간순 코멘트다. event마다 파일이나 Notion 페이지를 만들지 않는다.
 - Sentry에는 원시 관측, Linear에는 정제된 원인·action·수정·검증, Notion에는 릴리스·범위·일정·사업 판단만 둔다.
 - P0/P1, 보안·개인정보·데이터 손상, 대규모 중단, 출시 판단 변경처럼 별도 회고가 필요할 때만 사용자가 승인한 Notion incident 또는 Git postmortem을 하나 만들고 같은 사건을 계속 갱신한다.
-- 사용자가 시점 보고서 파일을 요청한 경우에만 `snapshot-report-writer`를 사용한다. 다음 event마다 새 보고서를 만들지 않는다.
+- 사용자가 시점 보고서 파일을 요청한 경우에만 `document.snapshot-report` capability를 해결한다. 선호 제공자는 `snapshot-report-writer`다. 다음 event마다 새 보고서를 만들지 않는다.
+- 선호 제공자가 없으면 기준일·범위·근거·결론·미확인 사항을 고정하는 동등한 시점 보고서 제공자를 찾는다. 없으면 incident 분석은 계속하되 `snapshot_report_handoff`에 대상 경로, 기준일, canonical incident key, 근거 링크, 필수 섹션, 미확인 사항을 담아 반환하고 일반 Markdown 파일로 조용히 대체하지 않는다.
+- `living-doc-writer`나 사용 가이드 작성 스킬은 시점 incident 보고서의 의미가 다르므로 대체제로 사용하지 않는다.
 - 문서에는 canonical key, Sentry·Linear·release·commit 링크를 둬 같은 사건을 검색할 수 있게 한다.
 - **Sentry → Linear**는 반복·회귀·고영향과 중복 제거를 통과한 사건을 `Triage` 후보로 연결하고, 사용자 판정 뒤 확정 수정 업무로 승격한다. **Sentry → Notion**은 프로젝트 범위·일정·릴리스 판단을 바꾼 사건만 `주요 운영 사건`에 요약한다.
 - 동일 사건의 해결·회귀는 기존 Linear canonical incident와 Notion 요약을 갱신하며 새 업무나 페이지를 반복 생성하지 않는다.

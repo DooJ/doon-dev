@@ -9,7 +9,7 @@ description: "현재 작업 중인 코드베이스를 근거로 기능 단위 �
 - 동작을 설명하기 전에는 반드시 소스 코드를 읽습니다. 코드가 지원하지 않는 기능을 추정해서 쓰지 않습니다.
 - 기능 의도가 여러 방식으로 해석될 수 있으면 가능한 해석과 확인 근거를 나눠 적고, 확인되지 않은 의도를 하나로 단정하지 않습니다.
 - 특정 기능을 분석하는지, 프로젝트 전체를 역기획하는지 먼저 구분합니다. 애매하면 `references/analysis_scope_router.md`를 읽습니다.
-- 분석 결과를 상시 문서로 승격해야 하거나 사용자가 문서화를 요청하면 `references/reverse_engineering_living_doc_bridge.md`를 읽고 `living-doc-writer`로 넘길 근거와 대상 문서를 정합니다.
+- 분석 결과를 상시 문서로 승격해야 하거나 사용자가 문서화를 요청하면 `references/reverse_engineering_living_doc_bridge.md`를 읽고 `document.living-current-state` capability로 넘길 근거와 대상 문서를 정합니다. 선호 제공자는 `living-doc-writer`입니다.
 
 ## 프리앰블
 
@@ -49,3 +49,10 @@ description: "현재 작업 중인 코드베이스를 근거로 기능 단위 �
 - 프로젝트 전체 역기획은 도메인 지도, 진입점 지도, 데이터/인터페이스 지도, 문서화 후보를 포함합니다.
 - 문서화 요청이 있으면 마지막에 `Living Docs 갱신 후보`를 두고 대상 문서, 반영할 사실, 미확정 추론, 확인 필요를 나눕니다.
 - 마지막에는 "확인한 근거"와 "아직 확인하지 못한 부분"을 짧게 구분합니다.
+
+## 문서 제공자 대체 계약
+
+- `living-doc-writer`가 발견되면 분석 결과를 그 스킬의 최신 상태 문서 계약으로 넘깁니다.
+- 동일한 `document.living-current-state` 계약을 가진 다른 제공자가 있으면 대상 문서의 단일 원본, 기존 문서 병합, 사실·추론 분리, 갱신 검증을 모두 충족할 때만 대체합니다.
+- 동등한 제공자가 없으면 분석 자체는 완료할 수 있지만 상시 문서를 임의로 작성하지 않습니다. 대신 `living_doc_handoff`에 `target_path`, `canonical_scope`, `facts`, `unconfirmed_inferences`, `sources`, `merge_constraints`, `verification`을 담아 반환합니다.
+- 단순 Markdown 생성, 시점 보고서, 사용 가이드 생성은 리빙독 대체제가 아닙니다.

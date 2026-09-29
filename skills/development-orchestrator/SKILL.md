@@ -72,6 +72,22 @@ description: "앱·웹·백엔드·디자인·QA가 섞인 복합 개발, 디자
 5. 시각 QA는 실제 화면 근거로 확인한다. 가능한 경우 screenshot, browser/simulator 확인, 모바일/데스크톱 viewport, 긴 텍스트, 빈 데이터, 오류 상태를 본다.
 6. 결과 보고에는 디자인 의도, 구현 변경, 검증 화면 또는 명령, 남은 시각/UX 리스크를 함께 적는다.
 
+### 디자인 capability 해석
+
+다른 플러그인의 스킬 이름은 설치 의존성이 아니라 선호 제공자다. 먼저 필요한 목적을 고르고, 현재 발견 가능한 제공자와 대체 경로를 결정한다.
+
+| capability | 선호 제공자 | 제공자가 없을 때 |
+|---|---|---|
+| `design.concept-direction` | `ui-concept-director` | 사용자 목표와 제약을 근거로 2~3개 방향, 선택 기준, 보류 결정을 `inline_concept_brief`로 만든다. 새 브랜드 전략을 확정하지 않는다. |
+| `design.screen-handoff` | `design-generalist` | layout, hierarchy, state, responsive, accessibility를 포함한 최소 `inline_screen_handoff`를 만든다. 시각 근거가 없으면 `partial`로 표시한다. |
+| `design.system-governance` | `design-system-curator` | 기존 토큰·컴포넌트를 보존하는 범위만 구현한다. 새 토큰 체계나 거버넌스 확정은 `design_system_handoff`로 남긴다. |
+| `content.ux-copy` | `content-strategist` | 기능 명확성·오류 복구·접근성에 필요한 최소 문구만 작성한다. 브랜드 보이스 재정의는 `content_handoff`로 남긴다. |
+
+- 선호 제공자를 발견하면 해당 스킬의 계약을 적용한다.
+- 같은 capability와 산출물 계약을 충족하는 다른 제공자가 있으면 대체할 수 있다. 단순히 이름이 비슷하다는 이유로 대체하지 않는다.
+- 대체 경로를 사용하면 결과에 `provider_mode: preferred|equivalent|inline|handoff`와 적용 범위를 기록한다.
+- capability가 현재 요청의 완료 조건이고 inline 계약으로도 충족하지 못하면 완료를 주장하지 않고 `partial` 또는 `blocked`로 보고한다.
+
 ## 스킬 사용 원칙
 
 서브에이전트가 업무할 때 특정 스킬을 기계적으로 강제하지 않는다. 작업 계약과 사용자 요청을 기준으로 필요한 도메인 스킬이 자연스럽게 발동되게 한다.
