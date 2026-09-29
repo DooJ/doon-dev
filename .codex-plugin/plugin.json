@@ -1,6 +1,6 @@
 {
   "name": "doon-dev",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "description": "DooN의 개발 분석, 구현, 리뷰, 오류 대응과 관측 워크플로우를 제공하는 개발 스킬 모음입니다.",
   "author": {
     "name": "DooJ",
