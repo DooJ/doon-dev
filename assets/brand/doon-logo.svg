@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
   <title id="title">DooN — DO:ON</title>
-  <desc id="desc">Two connected luminous cores represent Doo and an AI system switching on together.</desc>
+  <desc id="desc">Two connected luminous circles represent Doo and an AI system switching on together.</desc>
   <defs>
     <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#071426"/>
@@ -12,12 +12,12 @@
       <stop offset="0.5" stop-color="#67E8F9"/>
       <stop offset="1" stop-color="#A78BFA"/>
     </linearGradient>
-    <radialGradient id="cyanCore">
+    <radialGradient id="cyanGlow">
       <stop offset="0" stop-color="#E6FCFF"/>
       <stop offset="0.3" stop-color="#67E8F9"/>
       <stop offset="1" stop-color="#0891B2"/>
     </radialGradient>
-    <radialGradient id="violetCore">
+    <radialGradient id="violetGlow">
       <stop offset="0" stop-color="#F4F0FF"/>
       <stop offset="0.3" stop-color="#C4B5FD"/>
       <stop offset="1" stop-color="#7C3AED"/>
@@ -37,9 +37,9 @@
   <g transform="translate(74 44)">
     <path d="M16 96H46M146 96H176" stroke="url(#signal)" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
     <circle cx="82" cy="96" r="48" fill="none" stroke="#22D3EE" stroke-opacity="0.18" stroke-width="18" filter="url(#glow)"/>
-    <circle cx="82" cy="96" r="42" fill="#08182B" stroke="url(#cyanCore)" stroke-width="8"/>
+    <circle cx="82" cy="96" r="42" fill="#08182B" stroke="url(#cyanGlow)" stroke-width="8"/>
     <circle cx="130" cy="96" r="48" fill="none" stroke="#A78BFA" stroke-opacity="0.18" stroke-width="18" filter="url(#glow)"/>
-    <circle cx="130" cy="96" r="42" fill="#100B29" stroke="url(#violetCore)" stroke-width="8"/>
+    <circle cx="130" cy="96" r="42" fill="#100B29" stroke="url(#violetGlow)" stroke-width="8"/>
     <circle cx="106" cy="86" r="4.5" fill="#E0F2FE" filter="url(#glow)"/>
     <circle cx="106" cy="106" r="4.5" fill="#DDD6FE" filter="url(#glow)"/>
     <path d="M82 74V96" stroke="#E6FCFF" stroke-width="5" stroke-linecap="round"/>

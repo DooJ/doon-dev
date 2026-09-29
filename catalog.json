@@ -1,6 +1,4 @@
 {
-  "origin_repository": "DooJ/doon-core",
-  "origin_commit": "da922ca7bc0a705ce524e5ea70d2bac3d14d3f70",
   "repository": "DooJ/doon-dev",
   "visibility": "public",
   "category": "개발 스킬",
@@ -44,6 +42,10 @@
     {
       "name": "skill-inspector",
       "path": "skills/skill-inspector"
+    },
+    {
+      "name": "skill-versioning",
+      "path": "skills/skill-versioning"
     }
   ],
   "runtime_contract": {
@@ -82,13 +84,14 @@
       "id": "skill-quality",
       "label": "스킬 품질",
       "skills": [
-        "skill-inspector"
+        "skill-inspector",
+        "skill-versioning"
       ]
     }
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "4.0.0",
+    "version": "4.1.0",
     "display_name": "DooN Development"
   }
 }

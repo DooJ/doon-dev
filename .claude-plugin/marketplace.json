@@ -1,0 +1,14 @@
+{
+  "name": "doon-dev",
+  "description": "DooN Development plugin marketplace",
+  "owner": {
+    "name": "DooJ"
+  },
+  "plugins": [
+    {
+      "name": "doon-dev",
+      "source": ".",
+      "description": "개발 분석, 구현, 리뷰, 오류 대응과 관측 워크플로우를 제공하는 스킬 모음입니다."
+    }
+  ]
+}
