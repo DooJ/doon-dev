@@ -151,6 +151,7 @@ def validate_plugin_metadata(root: Path, skill_dirs: list[Path]) -> list[str]:
     ]
     try:
         manifests = [load_json(path) for path in manifest_paths]
+        antigravity = load_json(root / "antigravity/plugin.json")
         catalog = load_json(root / "catalog.json")
     except ValueError as error:
         return [str(error)]
@@ -164,6 +165,16 @@ def validate_plugin_metadata(root: Path, skill_dirs: list[Path]) -> list[str]:
         errors.append(f"{plugin_record}: 현재 버전 형식이 없습니다")
         return errors
     expected_version = version_match.group(1).removeprefix("v")
+
+    antigravity_keys = {"$schema", "name", "description"}
+    if set(antigravity) != antigravity_keys:
+        errors.append(f"{root / 'antigravity/plugin.json'}: 허용 필드가 {sorted(antigravity_keys)}와 다릅니다")
+    if antigravity.get("$schema") != "https://antigravity.google/schemas/v1/plugin.json":
+        errors.append(f"{root / 'antigravity/plugin.json'}: 공식 Antigravity schema가 아닙니다")
+    if antigravity.get("name") != manifests[0].get("name"):
+        errors.append(f"{root / 'antigravity/plugin.json'}: plugin 이름이 portable manifest와 다릅니다")
+    if not isinstance(antigravity.get("description"), str) or not antigravity["description"].strip():
+        errors.append(f"{root / 'antigravity/plugin.json'}: description이 비어 있습니다")
 
     catalog_plugin = catalog.get("plugin")
     versions = [manifest.get("version") for manifest in manifests]

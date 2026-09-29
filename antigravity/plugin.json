@@ -1,0 +1,5 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "doon-dev",
+  "description": "개발 분석, 구현, 코드 리뷰, 오류 대응과 관측을 위한 Agent Skills 모음입니다."
+}

@@ -42,6 +42,18 @@ class SkillVersionTests(unittest.TestCase):
         for path in manifests:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps({"name": "sample", "version": version}), encoding="utf-8")
+        antigravity = root / "antigravity/plugin.json"
+        antigravity.parent.mkdir(parents=True, exist_ok=True)
+        antigravity.write_text(
+            json.dumps(
+                {
+                    "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+                    "name": "sample",
+                    "description": "Sample skills",
+                }
+            ),
+            encoding="utf-8",
+        )
         (root / "catalog.json").write_text(
             json.dumps(
                 {

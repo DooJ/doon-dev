@@ -14,7 +14,7 @@ description: Use when 이 플러그인 저장소의 스킬을 새로 만들거�
 - 스킬 변경은 patch, 호환 기능 추가는 minor, 호출·입출력 계약 파괴는 major를 올린다.
 - 출처는 `자체 생성`, `외부 참고`, `외부 원문 도입`, `기원 미확인` 중 하나로 기록한다. 외부 자료는 URL, 버전이나 commit, 조회일, 실제 반영 범위를 가능한 만큼 남긴다.
 - 새 스킬은 `v1.0.0` 기준선으로 시작한다. 미완성 초안만 `v0.1.0`을 사용할 수 있다.
-- 플러그인 구성, 배포 manifest, catalog, 포함 스킬 목록이 바뀌면 `PLUGIN_VERSION.md`, `plugin.json`, `.codex-plugin/plugin.json`, `.claude-plugin/plugin.json`, `catalog.json`의 플러그인 버전도 함께 맞춘다.
+- 플러그인 구성, 배포 manifest, catalog, 포함 스킬 목록이 바뀌면 `PLUGIN_VERSION.md`, `plugin.json`, `.codex-plugin/plugin.json`, `.claude-plugin/plugin.json`, `catalog.json`의 플러그인 버전도 함께 맞춘다. `antigravity/plugin.json`은 공식 스키마상 버전 필드가 없으므로 이름·설명·허용 필드와 패키징 결과를 별도로 검증한다.
 
 ## 변경 후 절차
 
@@ -31,6 +31,7 @@ python3 skills/dev-skill-versioning/scripts/skill_versions.py fingerprint <skill
 
 ```bash
 python3 skills/dev-skill-versioning/scripts/skill_versions.py check --root .
+python3 scripts/build_antigravity_plugin.py
 ```
 
 6. 플러그인 manifest 자체도 검증하고 변경 파일을 검토한다.
