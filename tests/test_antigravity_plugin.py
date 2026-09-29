@@ -13,6 +13,18 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "scripts/build_antigravity_plugin.py"
 
 
+def file_snapshot(directory: Path) -> dict[Path, bytes]:
+    return {
+        path.relative_to(directory): path.read_bytes()
+        for path in directory.rglob("*")
+        if path.is_file()
+        and not path.is_symlink()
+        and path.name not in {".DS_Store"}
+        and "__pycache__" not in path.parts
+        and path.suffix != ".pyc"
+    }
+
+
 class AntigravityPluginTest(unittest.TestCase):
     def test_builds_installable_package_with_all_skills(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
@@ -27,6 +39,7 @@ class AntigravityPluginTest(unittest.TestCase):
             expected = {path.parent.name for path in (ROOT / "skills").glob("*/SKILL.md")}
             actual = {path.parent.name for path in (package / "skills").glob("*/SKILL.md")}
             self.assertEqual(expected, actual)
+            self.assertEqual(file_snapshot(ROOT / "skills"), file_snapshot(package / "skills"))
             self.assertTrue((package / ".doon-antigravity-package").is_file())
 
 
