@@ -22,7 +22,7 @@
 | 구현 품질 | `code-commenting`, `code-reviewer`, `error-responder` |
 | 플랫폼 | `android-architecture`, `kotlin-basics` |
 | 운영 연결 | `linear-qa`, `sentry-observability` |
-| 스킬 품질 | `skill-inspector`, `skill-versioning` |
+| 스킬 품질 | `skill-inspector` |
 
 ## 동작 방식
 
@@ -31,7 +31,7 @@
 3. 테스트와 검증 결과를 Linear, Sentry, Git 이력과 연결합니다.
 4. 스킬 변경은 `VERSION.md`에 버전과 출처를 남깁니다.
 
-`skill-versioning`을 제외한 스킬은 Core 없이 동작합니다. `skill-versioning`은 DooN 원본·버전·출처 계약과 Core 검증 스크립트를 사용하는 `core-required` 관리 스킬입니다.
+모든 포함 스킬은 Core 없이 동작합니다. DooN 원본의 버전·출처 관리는 Core 플러그인이 소유하는 `skill-versioning`이 담당합니다.
 
 ## 구조
 

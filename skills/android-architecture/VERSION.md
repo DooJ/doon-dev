@@ -1,4 +1,4 @@
-# android_architecture 버전·출처
+# android-architecture 버전·출처
 
 현재 버전: `v2.0.0`
 내용 SHA-256: `sha256:72b0684df33bd9f2bbe01dc9a261bbb5fce708728d2760b1a642608815eb4bcb`

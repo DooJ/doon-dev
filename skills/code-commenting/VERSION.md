@@ -1,4 +1,4 @@
-# code_commenting 버전·출처
+# code-commenting 버전·출처
 
 현재 버전: `v1.1.0`
 내용 SHA-256: `sha256:ae96d745be12bf0c947673d3114062cea0286ddb3d9ac367aeed9729fde84174`

@@ -7,15 +7,15 @@
   "skills": [
     {
       "name": "android-architecture",
-      "path": "skills/android_architecture"
+      "path": "skills/android-architecture"
     },
     {
       "name": "code-commenting",
-      "path": "skills/code_commenting"
+      "path": "skills/code-commenting"
     },
     {
       "name": "code-reviewer",
-      "path": "skills/code_reviewer"
+      "path": "skills/code-reviewer"
     },
     {
       "name": "development-orchestrator",
@@ -23,15 +23,15 @@
     },
     {
       "name": "error-responder",
-      "path": "skills/error_responder"
+      "path": "skills/error-responder"
     },
     {
       "name": "feature-analyzer",
-      "path": "skills/feature_analyzer"
+      "path": "skills/feature-analyzer"
     },
     {
       "name": "kotlin-basics",
-      "path": "skills/kotlin_basics"
+      "path": "skills/kotlin-basics"
     },
     {
       "name": "linear-qa",
@@ -44,17 +44,11 @@
     {
       "name": "skill-inspector",
       "path": "skills/skill-inspector"
-    },
-    {
-      "name": "skill-versioning",
-      "path": "skills/skill-versioning"
     }
   ],
   "runtime_contract": {
     "default": "portable",
-    "overrides": {
-      "skill-versioning": "core-required"
-    }
+    "overrides": {}
   },
   "groups": [
     {
@@ -88,14 +82,13 @@
       "id": "skill-quality",
       "label": "스킬 품질",
       "skills": [
-        "skill-inspector",
-        "skill-versioning"
+        "skill-inspector"
       ]
     }
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "3.2.0",
+    "version": "4.0.0",
     "display_name": "DooN Development"
   }
 }

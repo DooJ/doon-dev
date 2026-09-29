@@ -1,4 +1,4 @@
-# kotlin_basics 버전·출처
+# kotlin-basics 버전·출처
 
 현재 버전: `v2.0.0`
 내용 SHA-256: `sha256:1458087a78e9fff353da8b52d30051ccbea3a4237857cafd0f4f7858b1507f79`
