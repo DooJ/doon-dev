@@ -1,20 +1,20 @@
 {
-  "source_repository": "DooJ/doon-core",
-  "source_commit": "da922ca7bc0a705ce524e5ea70d2bac3d14d3f70",
+  "origin_repository": "DooJ/doon-core",
+  "origin_commit": "da922ca7bc0a705ce524e5ea70d2bac3d14d3f70",
   "repository": "DooJ/doon-dev",
   "visibility": "public",
   "category": "개발 스킬",
   "skills": [
     {
-      "name": "android_architecture",
+      "name": "android-architecture",
       "path": "skills/android_architecture"
     },
     {
-      "name": "code_commenting",
+      "name": "code-commenting",
       "path": "skills/code_commenting"
     },
     {
-      "name": "code_reviewer",
+      "name": "code-reviewer",
       "path": "skills/code_reviewer"
     },
     {
@@ -22,15 +22,15 @@
       "path": "skills/development-orchestrator"
     },
     {
-      "name": "error_responder",
+      "name": "error-responder",
       "path": "skills/error_responder"
     },
     {
-      "name": "feature_analyzer",
+      "name": "feature-analyzer",
       "path": "skills/feature_analyzer"
     },
     {
-      "name": "kotlin_basics",
+      "name": "kotlin-basics",
       "path": "skills/kotlin_basics"
     },
     {
@@ -50,9 +50,52 @@
       "path": "skills/skill-versioning"
     }
   ],
+  "runtime_contract": {
+    "default": "portable",
+    "overrides": {
+      "skill-versioning": "core-required"
+    }
+  },
+  "groups": [
+    {
+      "id": "development-loop",
+      "label": "개발 루프",
+      "skills": [
+        "development-orchestrator",
+        "feature-analyzer",
+        "error-responder",
+        "code-reviewer"
+      ]
+    },
+    {
+      "id": "code-guidance",
+      "label": "코드 기준",
+      "skills": [
+        "code-commenting",
+        "android-architecture",
+        "kotlin-basics"
+      ]
+    },
+    {
+      "id": "operations",
+      "label": "운영·품질",
+      "skills": [
+        "linear-qa",
+        "sentry-observability"
+      ]
+    },
+    {
+      "id": "skill-quality",
+      "label": "스킬 품질",
+      "skills": [
+        "skill-inspector",
+        "skill-versioning"
+      ]
+    }
+  ],
   "plugin": {
     "name": "doon-dev",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "display_name": "DooN Development"
   }
 }

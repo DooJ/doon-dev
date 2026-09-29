@@ -28,7 +28,7 @@ Sentry를 릴리스 이후 실제 동작을 관측하는 원본으로 사용하�
 - 단순 로컬 개발 중 컴파일 오류, 테스트 실패, 구현 중 바로 고친 실수에는 `error-responder` 또는 일반 구현 루프를 사용한다. 개발 중 오류마다 운영 리포트를 만들지 않는다.
 - `development` event는 로컬 진단에 사용할 수 있지만, 사용자가 별도 승인하지 않은 한 운영 incident 후보·알림·Linear 생성 입력에서 제외한다.
 
-세부 실행은 `.doon/workflows/sentry_observability_tracking.md`를 따른다. 구조화된 사건 본문이 필요할 때만 `references/sentry-incident-template.md`를 읽는다.
+아래 실행 계약만으로 독립 동작하며, DooN Core가 연결되어 있으면 공통 Sentry 추적 워크플로우를 추가로 적용한다. 구조화된 사건 본문이 필요할 때만 `references/sentry-incident-template.md`를 읽는다.
 
 ## 활성화 Gate
 
