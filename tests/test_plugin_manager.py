@@ -37,11 +37,13 @@ class PluginManagerTest(unittest.TestCase):
             log = Path(temporary) / "commands.log"
             for command in ("codex", "claude", "agy"):
                 path = fake_bin / command
-                path.write_text(f"#!/bin/sh\nprintf '{command}' >> \"$PLUGIN_MANAGER_LOG\"\nfor arg in \"$@\"; do printf ' <%s>' \"$arg\" >> \"$PLUGIN_MANAGER_LOG\"; done\nprintf '\\n' >> \"$PLUGIN_MANAGER_LOG\"\n", encoding="utf-8")
+                path.write_text(f"#!/bin/sh\nprintf '{command}' >> \"$PLUGIN_MANAGER_LOG\"\nfor arg in \"$@\"; do printf ' <%s>' \"$arg\" >> \"$PLUGIN_MANAGER_LOG\"; done\nprintf '\\n' >> \"$PLUGIN_MANAGER_LOG\"\nif [ \"$1\" = plugin ] && [ \"$2\" = list ]; then printf '[]\\n'; fi\n", encoding="utf-8")
                 path.chmod(0o755)
             env = os.environ.copy()
             env["PATH"] = f"{fake_bin}:{env['PATH']}"
             env["PLUGIN_MANAGER_LOG"] = str(log)
+            env["XDG_CONFIG_HOME"] = str(Path(temporary) / "config")
+            env["CODEX_HOME"] = str(Path(temporary) / "codex-home")
             completed = subprocess.run(["bash", str(MANAGER), "install"], cwd=ROOT, env=env, capture_output=True, text=True, timeout=30)
             self.assertEqual(0, completed.returncode, completed.stderr)
             commands = log.read_text(encoding="utf-8")

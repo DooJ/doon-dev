@@ -10,7 +10,7 @@
 
 # DooN Development
 
-**DooN Development**는 코드베이스 이해부터 구현, 리뷰, 오류 대응, 배포 관측까지 개발의 전체 흐름을 연결하는 공개 Codex·Claude Code·Antigravity 플러그인입니다. 플러그인 전체를 켜거나 끌 수 있으며, 설치 후 필요한 스킬만 개별적으로 활성화할 수 있습니다.
+**DooN Development**는 코드베이스 이해부터 구현, 리뷰, 오류 대응, 배포 관측까지 개발의 전체 흐름을 연결하는 공개 Codex·Claude Code·Antigravity 플러그인입니다. 설치 시 모든 스킬을 포함하며, 설치 후 사용하지 않을 스킬을 개별적으로 끌 수 있습니다.
 
 `DO:ON`의 두 원은 개발자의 판단과 에이전트의 실행을 뜻합니다. 코드 변경은 분석에서 시작해 검증과 운영 관측으로 닫히며, 각 스킬은 이 흐름의 한 단계를 명확하게 담당합니다.
 
@@ -32,6 +32,16 @@
 
 ## 동작 방식
 
+스킬은 설치 후 다음 명령으로 개별적으로 끄거나 다시 켭니다. 꺼진 스킬이 필요하면 같은 목적의 사용 가능한 스킬이나 도구를 선택합니다.
+
+```bash
+bash scripts/plugin.sh skills status
+bash scripts/plugin.sh skills disable code-reviewer
+bash scripts/plugin.sh skills enable code-reviewer
+```
+
+이 명령은 Codex와 Claude Code의 사용 설정을 갱신하며 새 세션에서 적용됩니다. Antigravity의 개별 스킬 차단은 검증 전입니다.
+
 1. 요청에 맞는 스킬이 코드와 프로젝트 상태를 읽습니다.
 2. 분석, 구현, 리뷰, 오류 대응을 서로 독립된 책임으로 수행합니다.
 3. 테스트와 검증 결과를 Linear, Sentry, Git 이력과 연결합니다.
@@ -47,7 +57,7 @@ cd doon-dev
 bash scripts/plugin.sh install
 ```
 
-관리 스크립트가 컴퓨터에 설치된 Codex, Claude Code, Antigravity를 자동으로 찾아 각각 필요한 형식으로 설치합니다. 설치되지 않은 에이전트는 건너뜁니다.
+관리 스크립트가 컴퓨터에 설치된 Codex, Claude Code, Antigravity를 자동으로 찾아 각각 필요한 형식으로 설치합니다. 설치되지 않은 에이전트는 건너뜁니다. 같은 플러그인이 다른 마켓플레이스로 이미 설치되어 있으면 중복 설치하지 않습니다.
 
 ### 관리 명령
 
