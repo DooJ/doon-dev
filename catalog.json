@@ -66,6 +66,10 @@
     {
       "name": "dev-skill-versioning",
       "path": "skills/dev-skill-versioning"
+    },
+    {
+      "name": "codebase-knowledge-stack-manager",
+      "path": "skills/codebase-knowledge-stack-manager"
     }
   ],
   "runtime_contract": {
@@ -95,6 +99,13 @@
       ]
     },
     {
+      "id": "codebase-knowledge",
+      "label": "코드베이스 지식 맵",
+      "skills": [
+        "codebase-knowledge-stack-manager"
+      ]
+    },
+    {
       "id": "operations",
       "label": "운영·품질",
       "skills": [
@@ -116,7 +127,7 @@
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "4.5.0",
+    "version": "4.6.0",
     "display_name": "DooN Development"
   }
 }
