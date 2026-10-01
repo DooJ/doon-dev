@@ -20,6 +20,10 @@
       "path": "skills/development-orchestrator"
     },
     {
+      "name": "deprecation-migration",
+      "path": "skills/deprecation-migration"
+    },
+    {
       "name": "error-responder",
       "path": "skills/error-responder"
     },
@@ -28,12 +32,28 @@
       "path": "skills/feature-analyzer"
     },
     {
+      "name": "interface-contract",
+      "path": "skills/interface-contract"
+    },
+    {
       "name": "kotlin-basics",
       "path": "skills/kotlin-basics"
     },
     {
       "name": "linear-qa",
       "path": "skills/linear-qa"
+    },
+    {
+      "name": "performance-diagnostics",
+      "path": "skills/performance-diagnostics"
+    },
+    {
+      "name": "quality-constraints",
+      "path": "skills/quality-constraints"
+    },
+    {
+      "name": "runtime-observability",
+      "path": "skills/runtime-observability"
     },
     {
       "name": "sentry-observability",
@@ -60,7 +80,8 @@
         "development-orchestrator",
         "feature-analyzer",
         "error-responder",
-        "code-reviewer"
+        "code-reviewer",
+        "deprecation-migration"
       ]
     },
     {
@@ -69,7 +90,8 @@
       "skills": [
         "code-commenting",
         "android-architecture",
-        "kotlin-basics"
+        "kotlin-basics",
+        "interface-contract"
       ]
     },
     {
@@ -77,7 +99,10 @@
       "label": "운영·품질",
       "skills": [
         "linear-qa",
-        "sentry-observability"
+        "sentry-observability",
+        "performance-diagnostics",
+        "quality-constraints",
+        "runtime-observability"
       ]
     },
     {
@@ -91,7 +116,7 @@
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "4.4.0",
+    "version": "4.5.0",
     "display_name": "DooN Development"
   }
 }

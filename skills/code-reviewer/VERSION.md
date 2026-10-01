@@ -1,7 +1,7 @@
 # code-reviewer 버전·출처
 
-현재 버전: `v1.0.4`
-내용 SHA-256: `sha256:c88b0c4326798cbc329d6011351fd6feb4b844a6e6871e5c1cd30ca7abd7d036`
+현재 버전: `v1.0.5`
+내용 SHA-256: `sha256:729c6fa4f93e55cf1186e0dbe18aa63ca97bf92a04b5934f84e9bde4690b84a1`
 
 이 기록은 현재 스킬 파일을 기준선으로 등록합니다. 기록 이전의 변경에 임의의 버전 번호를 붙이지 않으며, 확인할 수 없는 원저작·참고 경위는 추정하지 않습니다.
 
@@ -16,11 +16,13 @@
 | `S3` | 자체 생성 | 2026-09-29 사용자 요청 | 변경에 비례한 검증 기준을 자체화한 독립 실행 계약 |
 | `S4` | 자체 생성 | 2026-09-29 사용자 요청 | Android·Kotlin sibling skill 참조를 canonical hyphen 경로로 전환 |
 | `S5` | 자체 생성 | 2026-09-29 사용자 요청 | 플러그인 외부 런타임 언급을 제거하고 자체 검증 기준으로 정리 |
+| `S6` | 외부 참고 | [Addy Osmani code-simplification](https://github.com/addyosmani/agent-skills/blob/main/skills/code-simplification/SKILL.md)와 [doubt-driven-development](https://github.com/addyosmani/agent-skills/blob/main/skills/doubt-driven-development/SKILL.md), 2026-10-01 조회; 사용자 요청 | 동작 보존형 단순화와 비용·남용·반복 장애 리뷰 질문 |
 
 ## 버전 이력
 
 | 버전 | 날짜 | 변경 요약 | 출처 ID |
 |---|---|---|---|
+| `v1.0.5` | 2026-10-01 | 단순화의 동작 보존과 고위험 비용·반복 장애 검토를 보강했다. | `S6` |
 | `v1.0.4` | 2026-09-29 | 외부 런타임 설명 없이 변경에 비례한 검증 기준만 적용하도록 정리했다. | `S5` |
 | `v1.0.3` | 2026-09-29 | 보조 스킬의 상대경로를 canonical hyphen 폴더명으로 갱신했다. | `S4` |
 | `v1.0.2` | 2026-09-29 | 독립 설치에서도 변경 비례 검증을 수행하도록 실행 계약을 보정했다. | `S3` |

@@ -24,6 +24,11 @@
 | `feature-analyzer` | 코드에서 기능의 진입점, 상태, 데이터 흐름과 외부 연동을 역기획합니다. |
 | `error-responder` | 크래시, 빌드·테스트 실패와 운영 장애의 원인과 재발 방지를 분석합니다. |
 | `code-reviewer` | 변경 코드의 버그, 회귀, 보안·성능 위험과 테스트 누락을 리뷰합니다. |
+| `interface-contract` | 공개 API·모듈 경계의 소비자, 오류와 호환성 계약을 설계합니다. |
+| `quality-constraints` | 큰 작업에서 기존 품질 기준선을 확인하고 검사 우회를 막습니다. |
+| `deprecation-migration` | 소비자를 단계적으로 옮기고 옛 구현의 제거 조건을 확인합니다. |
+| `performance-diagnostics` | 측정으로 병목을 찾고 같은 조건에서 개선 효과를 확인합니다. |
+| `runtime-observability` | 운영 장애를 이해할 최소 로그·지표·트레이스를 설계합니다. |
 | `code-commenting` | 공개 API와 복잡한 도메인 계약에 필요한 주석과 KDoc을 작성합니다. |
 | `android-architecture` | Android 계층 구조, 생명주기, 상태와 데이터 흐름 기준을 제공합니다. |
 | `kotlin-basics` | Kotlin의 타입, null-safety, 코루틴, 컬렉션과 네이밍 관례를 안내합니다. |
