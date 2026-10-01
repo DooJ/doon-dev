@@ -1,9 +1,9 @@
 ---
-name: codebase-knowledge-stack-manager
-description: "Graphify·Archify 원본 스킬의 출처와 전역 설치를 관리하거나, 한 프로젝트의 코드 그래프·아키텍처 다이어그램·Obsidian 볼트를 codebase-map/에 구성하고 갱신할 때 사용합니다. 일반 docs·publish 문서 작성에는 적용하지 않습니다."
+name: codegraph
+description: "코드그래프(CodeGraph). Graphify·Archify 원본 스킬의 출처와 전역 설치를 관리하거나, 한 프로젝트의 코드 관계 그래프·아키텍처 다이어그램·Obsidian 연결 문서를 codebase-map/에 구성하고 갱신할 때 사용합니다. 일반 docs·publish 문서 작성에는 적용하지 않습니다."
 ---
 
-# 코드베이스 지식 스택 관리
+# 코드그래프
 
 이 스킬은 두 범위를 구분한다. DooN의 `Sources`는 외부 **원본**을 보관하고, 각 프로젝트의 `codebase-map/`은 분석 **결과**를 보관한다. Graphify와 Archify의 원본 `SKILL.md`는 수정하지 않는다. 별도의 DooN External 플러그인을 만들지 않는다.
 

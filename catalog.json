@@ -68,8 +68,8 @@
       "path": "skills/dev-skill-versioning"
     },
     {
-      "name": "codebase-knowledge-stack-manager",
-      "path": "skills/codebase-knowledge-stack-manager"
+      "name": "codegraph",
+      "path": "skills/codegraph"
     }
   ],
   "runtime_contract": {
@@ -102,7 +102,7 @@
       "id": "codebase-knowledge",
       "label": "코드베이스 지식 맵",
       "skills": [
-        "codebase-knowledge-stack-manager"
+        "codegraph"
       ]
     },
     {
@@ -127,7 +127,7 @@
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "4.6.0",
+    "version": "5.0.0",
     "display_name": "DooN Development"
   }
 }

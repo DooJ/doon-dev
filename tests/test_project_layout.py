@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 
 
-SCRIPT = Path(__file__).resolve().parents[1] / "skills/codebase-knowledge-stack-manager/scripts/project_layout.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "skills/codegraph/scripts/project_layout.py"
 SPEC = importlib.util.spec_from_file_location("project_layout", SCRIPT)
 assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)

@@ -1,6 +1,6 @@
 # DooN Development 플러그인 운영 안내
 
-최종 확인: 2026-10-01 · 대상 버전: 4.6.0
+최종 확인: 2026-10-01 · 대상 버전: 5.0.0
 
 이 문서는 개발 스킬의 역할과 사용 경계를 설명합니다. 최초 설치 명령과 전체 스킬 목록은 [저장소 README](../README.md)에 있습니다. 설치 시 17개 스킬이 모두 포함되며, 이후 필요하지 않은 스킬만 사용 중지할 수 있습니다.
 
@@ -10,7 +10,7 @@
 |---|---|---|
 | 개발 루프 | `development-orchestrator`, `feature-analyzer`, `error-responder`, `code-reviewer`, `deprecation-migration` | 복합 개발, 기존 기능 파악, 오류·변경 검토 또는 단계적 전환이 필요할 때 |
 | 코드 가이드 | `code-commenting`, `android-architecture`, `kotlin-basics`, `interface-contract` | 주석·언어 관례 또는 공개 경계의 소비자 계약이 필요할 때 |
-| 코드베이스 지식 맵 | `codebase-knowledge-stack-manager` | Graphify·Archify 원본 배포와 프로젝트별 그래프·다이어그램·Obsidian 볼트를 관리할 때 |
+| 코드베이스 지식 맵 | `codegraph` | Graphify·Archify 원본 배포와 프로젝트별 그래프·다이어그램·Obsidian 볼트를 관리할 때 |
 | 운영·품질 | `linear-qa`, `sentry-observability`, `runtime-observability`, `performance-diagnostics`, `quality-constraints` | QA·릴리스 관측, 운영 계측, 성능 진단 또는 큰 작업의 품질 기준선이 필요할 때 |
 | 스킬 품질 | `skill-inspector`, `dev-skill-versioning` | 외부 스킬 설치 전 위험 검토 또는 이 저장소의 스킬 수정·배포 점검 |
 
@@ -24,7 +24,7 @@
 - 운영 계측: 진단 신호가 부족하면 `runtime-observability`로 최소 계측을 정합니다. Sentry 릴리스 사건 운영은 `sentry-observability`가 맡습니다.
 - 장애: `error-responder`로 재현·로그·원인 가설을 분리합니다. 수정은 사용자의 변경 요청 범위에 맞춰 진행하고, 필요하면 Sentry 관측을 통해 실제 재발 여부를 확인합니다.
 - 문서·스타일: `code-commenting`은 주석이 필요한 계약에만 적용합니다. Android/Kotlin 가이드는 해당 기술을 쓰는 코드에서만 적용합니다.
-- 코드베이스 지식 맵: `codebase-knowledge-stack-manager`는 외부 원본 스킬과 에이전트 설치 상태를 구분하고, 각 프로젝트의 생성물을 `codebase-map/`에 모읍니다. Graphify 작업 폴더는 호환 링크를 준비한 뒤 생성하며 실행 후 옮기지 않습니다.
+- 코드베이스 지식 맵: `codegraph`는 외부 원본 스킬과 에이전트 설치 상태를 구분하고, 각 프로젝트의 생성물을 `codebase-map/`에 모읍니다. Graphify 작업 폴더는 호환 링크를 준비한 뒤 생성하며 실행 후 옮기지 않습니다.
 - 외부 연계: `linear-qa`와 `sentry-observability`는 각각 서비스 접근 권한과 프로젝트 구성이 있어야 실제 읽기·쓰기 동작을 합니다. 연결이 없으면 확인된 코드·테스트·로그 범위만 보고하고, 외부 상태를 추정하지 않습니다.
 
 꺼진 스킬은 단순히 사용하지 않습니다. 필요 목적을 수행할 수 있는 다른 활성 스킬이나 일반 도구가 있으면 그 경로를 선택하되, 특정 스킬이 실행된 것처럼 표시하지 않습니다.
