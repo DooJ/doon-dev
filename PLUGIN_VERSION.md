@@ -1,6 +1,6 @@
 # DooN Development 플러그인 버전
 
-현재 버전: `v5.1.2`
+현재 버전: `v5.2.0`
 
 ## 출처
 
@@ -36,11 +36,13 @@
 | `P24` | 자체 생성 | 2026-10-02 사용자 지정 호출 문구와 선행 세팅 요구 | `codegraph`의 세팅·분석·진행 진입과 준비 상태 확인 |
 | `P25` | 외부 참고 | [Archify README](https://github.com/tt-a1i/archify/blob/main/README_EN.md), [Archify 스킬](https://github.com/tt-a1i/archify/blob/main/archify/SKILL.md), 2026-10-02 조회; 사용자 정정 | 문서·설명 기반 다이어그램과 코드 근거형 다이어그램의 분리 |
 | `P26` | 자체 생성 | 2026-10-02 사용자 질문 | 코드그래프의 문서 부재 기본 행동과 질문 조건 구체화 |
+| `P27` | 외부 참고 | [Graphify Obsidian 내보내기](https://github.com/Graphify-Labs/graphify/blob/main/graphify/export.py), 2026-10-02 조회; 기존 BOIME·Boime N-Review 볼트 비교; 사용자 요청 | 코드그래프의 독립 Obsidian 볼트 생성·갱신 기준 |
 
 ## 버전 이력
 
 | 버전 | 날짜 | 변경 요약 | 출처 ID |
 |---|---|---|---|
+| `v5.2.0` | 2026-10-02 | Graphify 원시 Obsidian 내보내기와 별도로 프로젝트별 근거형 볼트를 작성하도록 코드그래프를 확장했다. | `P27` |
 | `v5.1.2` | 2026-10-02 | 코드그래프의 문서 없는 프로젝트 분석 기본값과 범위 질문 조건을 명확히 했다. | `P26` |
 | `v5.1.1` | 2026-10-02 | 코드그래프에서 Archify 입력 근거와 Graphify 결과의 연결 방식을 명확히 했다. | `P25` |
 | `v5.1.0` | 2026-10-02 | 코드그래프의 세팅과 프로젝트 분석·진행 진입을 분리하고 미설치 상태 안내를 추가했다. | `P24` |
