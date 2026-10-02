@@ -24,7 +24,7 @@ python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" init --note "�
 VERSION='v1.0.0'
 GRAPH_DIR="$PROJECT_ROOT/codebase-map/$SCOPE_NAME/$VERSION/graphify-out"
 GRAPHIFY_OUT="$GRAPH_DIR" graphify update "$PROJECT_ROOT" --no-cluster
-GRAPHIFY_OUT="$GRAPH_DIR" graphify cluster-only "$PROJECT_ROOT" --graph "$GRAPH_DIR/graph.json" --no-label
+GRAPHIFY_OUT="$GRAPH_DIR" graphify cluster-only "$PROJECT_ROOT" --graph "$GRAPH_DIR/graph.json"
 
 python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" record --component graphify --artifact graphify-out/graph.json --artifact graphify-out/overview/graph.json --artifact graphify-out/overview/graph.html --note "상세·개요 그래프 검증"
 python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" record --component archify --artifact archify/flow-20261002-0900/diagram.json --artifact archify/flow-20261002-0900/index.html --note "다이어그램 검증"
@@ -34,6 +34,8 @@ python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" bump --level p
 python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" reclassify --level minor --note "핵심 흐름까지 확장"
 python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" status
 ```
+
+상세 그래프를 사용자에게 전달할 때는 `cluster-only --no-label`을 쓰지 않는다. 이 옵션은 군집 이름을 `Community N`으로 남긴다. 모델 로그인이 없어도 기본 재군집화의 대표 허브 심볼명을 사용하고, `graph.json`·`GRAPH_REPORT.md`·`graph.html`에서 자리표시자가 없는지 확인한다.
 
 `graphify update`는 기존 Graphify 결과가 있을 때의 예시다. 첫 실행에는 검토한 원본의 `extract --code-only --no-cluster` 등 대상에 맞는 명령을 사용한다. 검토한 Graphify 원본은 `GRAPHIFY_OUT` 절대경로를 추출·갱신에서 지원한다. 실행 때마다 현재 버전의 `GRAPH_DIR`을 다시 설정한다. Archify·볼트·개요 그래프도 같은 버전 폴더를 출력 대상으로 지정한다. 예시 산출물 경로는 실제로 만들고 검증한 파일로 바꾼다. 단일 프로젝트에서 개요가 불필요하면 `overview/` 경로를 넣지 않는다.
 
