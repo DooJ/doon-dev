@@ -1,15 +1,22 @@
 ---
 name: codegraph
-description: "코드그래프(CodeGraph). Graphify·Archify 원본 스킬의 출처와 전역 설치를 관리하거나, 한 프로젝트의 코드 관계 그래프·아키텍처 다이어그램·Obsidian 연결 문서를 codebase-map/에 구성하고 갱신할 때 사용합니다. 일반 docs·publish 문서 작성에는 적용하지 않습니다."
+description: "'코드그래프 세팅해' 요청에는 Graphify·Archify 원본을 검토하고 설치합니다. '코드그래프 분석해' 또는 '코드그래프 진행해' 요청에는 준비 상태를 확인한 뒤 프로젝트의 코드 관계 그래프·아키텍처 다이어그램·Obsidian 연결 문서를 구성·갱신합니다. 일반 docs·publish 문서 작성에는 적용하지 않습니다."
 ---
 
 # 코드그래프
 
 이 스킬은 두 범위를 구분한다. DooN의 `Sources`는 외부 **원본**을 보관하고, 각 프로젝트의 `codebase-map/`은 분석 **결과**를 보관한다. Graphify와 Archify의 원본 `SKILL.md`는 수정하지 않는다. 별도의 DooN External 플러그인을 만들지 않는다.
 
+## 요청 분기와 준비 확인
+
+- **`코드그래프 세팅해`**: 아래 외부 원본·전역 설치 절차를 실행하고, 각 에이전트에서 실제 사용 가능 여부를 확인한다. 설치만 요청했다면 프로젝트의 `codebase-map/`을 만들거나 코드 분석을 시작하지 않는다. 이미 설치됐다면 출처·버전·동작 상태를 확인하고 필요한 부분만 복구한다.
+- **`코드그래프 분석해` / `코드그래프 진행해`**: 대상 프로젝트를 정하고 먼저 준비 상태를 점검한다. 현재 에이전트에서 Graphify와 Archify의 검토된 원본 checkout, 필요한 스킬·CLI와 의존성, 실제 호출 경로가 유효해야 한다. DooN Dev의 `codegraph` **관리 스킬만 설치된 상태는 준비 완료가 아니다.** Obsidian 앱 설치는 Markdown 볼트 생성의 필수 조건이 아니다.
+- 준비가 부족하면 빠진 도구·경로를 구체적으로 알리고 **`코드그래프 세팅해`**를 먼저 요청하도록 안내한다. 분석 요청만으로 외부 스킬을 자동 설치하거나 빈 `codebase-map/`을 만들지 않는다. 한 요청에서 세팅과 분석을 모두 명시했다면 세팅을 검증한 뒤 분석을 이어간다.
+- 분석 대상이 명확하면 현재 프로젝트를 사용한다. 대상 프로젝트가 불분명하면 경로를 확인한다. `진행해`는 기존 `codebase-map/`이 있으면 갱신하고, 없으면 새로 구성한다.
+
 ## 외부 원본과 에이전트 배포
 
-사용자가 원본 연결·설치·업데이트를 요청한 경우에만 수행한다.
+`코드그래프 세팅해`처럼 사용자가 원본 연결·설치·업데이트를 요청한 경우에만 수행한다.
 
 1. 현재 환경의 `AGENTIC_ROOT`를 확인한다. 공식 원본은 [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)와 [tt-a1i/archify](https://github.com/tt-a1i/archify)에서 재확인한다. 동명 프로젝트를 추측해 선택하지 않는다.
 2. 원본을 `<AGENTIC_ROOT>/Sources/external/graphify`, `<AGENTIC_ROOT>/Sources/external/archify`에 별도 checkout으로 받거나 기존 checkout을 갱신한다. 출처 URL·commit·라이선스·검토일을 로컬 목록에 남긴다. `Sources/selection.json`은 DooN 소유 플러그인 선택 상태이므로 외부 저장소를 끼워 넣지 않는다.
