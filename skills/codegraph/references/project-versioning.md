@@ -17,7 +17,7 @@
 
 ```bash
 python3 "$SCRIPT" --project "$PROJECT_ROOT" init --note "현재 코드그래프 기준선"
-python3 "$SCRIPT" --project "$PROJECT_ROOT" record --component graphify --artifact graphify-out/graph.json --note "실제 변경 및 조회 검증 요약"
+python3 "$SCRIPT" --project "$PROJECT_ROOT" record --component graphify --artifact graphify-out/graph.json --artifact graphify-out/overview/graph.json --artifact graphify-out/overview/graph.html --note "상세·개요 그래프 변경과 표시 검증 요약"
 python3 "$SCRIPT" --project "$PROJECT_ROOT" record --component archify --artifact archify/flow-20261002-0900/diagram.json --artifact archify/flow-20261002-0900/index.html --note "다이어그램 검증 요약"
 python3 "$SCRIPT" --project "$PROJECT_ROOT" record --component obsidian --artifact vault/00_HOME.md --artifact vault/01_SYSTEM_MAP.md --note "볼트 링크·근거 확인 요약"
 python3 "$SCRIPT" --project "$PROJECT_ROOT" bump --level patch --note "전체 코드그래프 기준 보정"
@@ -25,7 +25,7 @@ python3 "$SCRIPT" --project "$PROJECT_ROOT" reclassify --level minor --note "핵
 python3 "$SCRIPT" --project "$PROJECT_ROOT" status
 ```
 
-위 산출물 경로는 예시다. 실제로 생성하고 검증한 파일 또는 생성물 폴더만 지정한다. Obsidian 볼트는 `.obsidian` 개인 UI 설정이나 수동 노트 대신 이번에 갱신한 설명·색인 노트를 지정한다. 같은 구성요소의 다음 실행에서도 비교 범위가 일정하도록 대표 산출물을 유지하고, 범위가 바뀌면 요약에 이유를 남긴다. 최초 `init` 뒤 기존 산출물을 등록할 때에는 작업 요약에 **기존 결과 기준선 등록**이라고 밝힌다.
+위 산출물 경로는 예시다. 단일 프로젝트에서 별도 개요가 불필요하면 존재하지 않는 `overview/` 경로를 넣지 않는다. 실제로 생성하고 검증한 파일 또는 생성물 폴더만 지정한다. Obsidian 볼트는 `.obsidian` 개인 UI 설정이나 수동 노트 대신 이번에 갱신한 설명·색인 노트를 지정한다. 같은 구성요소의 다음 실행에서도 비교 범위가 일정하도록 대표 산출물을 유지하고, 범위가 바뀌면 요약에 이유를 남긴다. 최초 `init` 뒤 기존 산출물을 등록할 때에는 작업 요약에 **기존 결과 기준선 등록**이라고 밝힌다.
 
 ## 완료 보고
 
