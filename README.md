@@ -28,7 +28,7 @@
 | `quality-constraints` | 큰 작업에서 기존 품질 기준선을 확인하고 검사 우회를 막습니다. |
 | `deprecation-migration` | 소비자를 단계적으로 옮기고 옛 구현의 제거 조건을 확인합니다. |
 | `performance-diagnostics` | 측정으로 병목을 찾고 같은 조건에서 개선 효과를 확인합니다. |
-| `codegraph` | “코드그래프 세팅해”로 Graphify·Archify를 설치하고, “코드그래프 분석해/진행해”로 단일·다중 프로젝트의 읽기 쉬운 개요 그래프, 상세 그래프·다이어그램·Obsidian 볼트와 버전 이력을 관리합니다. |
+| `codegraph` | “코드그래프 세팅해”로 Graphify·Archify를 설치하고, “코드그래프 분석해/진행해”로 `codebase-map/<분석 범위>/<버전>/`에 개요·상세 그래프, 다이어그램, Obsidian 볼트와 범위별 이력을 관리합니다. |
 | `runtime-observability` | 운영 장애를 이해할 최소 로그·지표·트레이스를 설계합니다. |
 | `code-commenting` | 공개 API와 복잡한 도메인 계약에 필요한 주석과 KDoc을 작성합니다. |
 | `android-architecture` | Android 계층 구조, 생명주기, 상태와 데이터 흐름 기준을 제공합니다. |
