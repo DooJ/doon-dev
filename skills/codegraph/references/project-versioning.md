@@ -30,7 +30,7 @@ GRAPHIFY_OUT="$GRAPH_DIR" graphify cluster-only "$PROJECT_ROOT" --graph "$GRAPH_
 
 python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" record --component graphify --artifact graphify-out/graph.json --artifact graphify-out/overview/graph.json --artifact graphify-out/overview/graph.html --note "상세·개요 그래프 검증"
 python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" record --component archify --artifact archify/flow-20261002-0900/diagram.json --artifact archify/flow-20261002-0900/index.html --note "다이어그램 검증"
-python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" record --component obsidian --artifact vault/00_HOME.md --artifact vault/01_SYSTEM_MAP.md --note "볼트 링크·근거 확인"
+python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" record --component obsidian --artifact data/catalog.json --artifact generation-manifest.json --artifact vaults --note "데이터 지문·멀티 볼트 링크·근거 확인"
 
 python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" bump --level patch --note "전체 지도 보정"
 python3 "$LEDGER" --project "$PROJECT_ROOT" --scope "$SCOPE_NAME" reclassify --level minor --note "핵심 흐름까지 확장"

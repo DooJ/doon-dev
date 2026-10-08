@@ -66,7 +66,7 @@
 
 ## 실행
 
-`check`는 Graphify 상세·통합 개요, Archify 구조도, 볼트의 `00_HOME.md`·`01_SYSTEM_MAP.md`, 새 전체 버전의 `CHANGE_REPORT.md`까지 만든 뒤 마지막에 실행한다.
+`capability_map.py validate`는 새 멀티 볼트에서도 필수다. 아래 `render/check`는 기존 단일 `vault/` 산출물의 호환 경로다. 새 `vaults/`는 프로젝트별 생성기와 `check_multi_vault.py`를 사용한다.
 
 ```bash
 python3 "$CODEGRAPH_SKILL/scripts/capability_map.py" validate \
@@ -82,6 +82,8 @@ python3 "$CODEGRAPH_SKILL/scripts/capability_map.py" check \
   --expected-project client --expected-project server
 ```
 
-`validate`는 요청 프로젝트 누락, 근거 파일 부재, 역할·기능 설명 부재, 관계 양쪽의 책임·근거 부재를 실패로 처리한다. `render`는 검증 후 프로젝트별 노트와 기능·관계 지도를 만든다. 이전 생성 노트의 지문이 달라졌으면 사용자 편집으로 보고 덮어쓰지 않는다. 기존 노트보다 짧아지면 실패하며, 의도적 통합일 때만 검토 이유를 `--shortening-reason`으로 기록한다. `check`는 생성 노트와 입력의 일치, `00_HOME.md` 진입점, 위키링크, 통합 개요의 요청 프로젝트 포함, 새 버전의 변경 보고서를 검사한다. `00_HOME.md`, 수동 흐름 노트, `.obsidian/`은 자동 수정하지 않으므로 새 지도로 이어지는 시작 링크와 대표 흐름의 코드 근거는 실행자가 별도로 검증한다.
+기존 단일 볼트에서 `validate`는 요청 프로젝트 누락, 근거 파일 부재, 역할·기능 설명 부재, 관계 양쪽의 책임·근거 부재를 실패로 처리한다. `render`는 검증 후 프로젝트별 노트와 기능·관계 지도를 만든다. 이전 생성 노트의 지문이 달라졌으면 사용자 편집으로 보고 덮어쓰지 않는다. 기존 노트보다 짧아지면 실패하며, 의도적 통합일 때만 검토 이유를 `--shortening-reason`으로 기록한다. `check`는 생성 노트와 입력의 일치, `00_HOME.md` 진입점, 위키링크, 통합 개요의 요청 프로젝트 포함, 새 버전의 변경 보고서를 검사한다. `00_HOME.md`, 수동 흐름 노트, `.obsidian/`은 자동 수정하지 않으므로 새 지도로 이어지는 시작 링크와 대표 흐름의 코드 근거는 실행자가 별도로 검증한다.
 
 검증 통과는 **구조와 근거 위치의 최소 조건**이다. 사용자·운영 관점의 기능 분류와 중복 판정이 올바른지는 대표 기능을 코드와 아카이브에서 다시 따라가 확인한다. 버전이 바뀌면 [프로젝트 버전 관리 기준](project-versioning.md)의 `CHANGE_REPORT.md`로 실제 전후 차이도 기록한다.
+
+새 출력의 `data/catalog.json`·`vaults/registry.json`·`generation-manifest.json` 계약과 검사 명령은 [분석 데이터와 멀티 볼트 계약](data-vault-model.md)을 따른다.
