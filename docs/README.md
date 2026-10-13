@@ -1,8 +1,8 @@
 # DooN Development 플러그인 운영 안내
 
-최종 확인: 2026-10-06 · 대상 버전: 7.0.0
+최종 확인: 2026-10-13 · 대상 버전: 7.1.0
 
-이 문서는 개발 스킬의 역할과 사용 경계를 설명합니다. 최초 설치 명령과 전체 스킬 목록은 [저장소 README](../README.md)에 있습니다. 설치 시 17개 스킬이 모두 포함되며, 이후 필요하지 않은 스킬만 사용 중지할 수 있습니다.
+이 문서는 개발 스킬의 역할과 사용 경계를 설명합니다. 최초 설치 명령과 전체 스킬 목록은 [저장소 README](../README.md)에 있습니다. 설치 시 18개 스킬이 모두 포함되며, 이후 필요하지 않은 스킬만 사용 중지할 수 있습니다.
 
 ## 스킬 구성
 
@@ -11,7 +11,7 @@
 | 개발 루프 | `development-orchestrator`, `feature-analyzer`, `error-responder`, `code-reviewer`, `deprecation-migration` | 복합 개발, 기존 기능 파악, 오류·변경 검토 또는 단계적 전환이 필요할 때 |
 | 코드 가이드 | `code-commenting`, `android-architecture`, `kotlin-basics`, `interface-contract` | 주석·언어 관례 또는 공개 경계의 소비자 계약이 필요할 때 |
 | 코드베이스 지식 맵 | `codegraph` | Graphify·Archify 원본 배포와 프로젝트별 그래프·다이어그램·Obsidian 볼트를 관리할 때 |
-| 운영·품질 | `linear-qa`, `sentry-observability`, `runtime-observability`, `performance-diagnostics`, `quality-constraints` | QA·릴리스 관측, 운영 계측, 성능 진단 또는 큰 작업의 품질 기준선이 필요할 때 |
+| 운영·품질 | `app-store-release`, `linear-qa`, `sentry-observability`, `runtime-observability`, `performance-diagnostics`, `quality-constraints` | QA·릴리스 관측, 운영 계측, 성능 진단 또는 큰 작업의 품질 기준선이 필요할 때 |
 | 스킬 품질 | `skill-inspector`, `dev-skill-versioning` | 외부 스킬 설치 전 위험 검토 또는 이 저장소의 스킬 수정·배포 점검 |
 
 이 묶음은 탐색을 위한 분류이지 일괄 활성화 스위치가 아닙니다. 각 스킬은 독립적으로 선택합니다. `development-orchestrator`를 사용해도 다른 스킬을 무조건 실행하지 않고, 필요한 역할과 접근 가능한 도구를 확인해 연결합니다.
@@ -25,6 +25,7 @@
 - 장애: `error-responder`로 재현·로그·원인 가설을 분리합니다. 수정은 사용자의 변경 요청 범위에 맞춰 진행하고, 필요하면 Sentry 관측을 통해 실제 재발 여부를 확인합니다.
 - 문서·스타일: `code-commenting`은 주석이 필요한 계약에만 적용합니다. Android/Kotlin 가이드는 해당 기술을 쓰는 코드에서만 적용합니다.
 - 코드베이스 지식 맵: `코드그래프 세팅해`는 Graphify·Archify 원본 검토와 전역 설치, `코드그래프 분석해`와 `코드그래프 진행해`는 준비 상태 확인 후 프로젝트 분석·갱신으로 연결됩니다. 준비가 안 됐으면 세팅을 안내하고 분석을 시작하지 않습니다. Graphify는 코드 관계를 추출하고, Archify는 에이전트가 코드·Graphify 조회 결과를 근거로 핵심 구조를 다이어그램으로 작성합니다. 기존 문서는 있을 때만 참고하며, 문서가 없어도 먼저 작성하도록 요구하지 않습니다. 범위가 없으면 현재 구현의 핵심 구조부터 그립니다. `codegraph`는 Graphify의 노드별 Obsidian 내보내기를 최종 볼트로 사용하지 않고, 코드·문서 근거를 `data/catalog.json`에 등록하고, 상위 연결 볼트와 솔루션별 상세 볼트를 `vaults/` 아래 독립 생성합니다. Graphify 원시 내보내기가 필요하면 `graphify-out/obsidian/`에 분리합니다.
+- 스토어 배포: `app-store-release`는 라이브러리 비교·운영 설정·난독화와 크래시 복원·정책·처리방침 링크·Git 이력을 버전별 기록으로 연결합니다. 부분 점검 요청은 해당 범위만 실행하고, 보류 항목은 선택 사항으로 유지합니다. 앱별 키와 URL은 프로젝트 또는 상위 작업공간의 `docs/app-store-release-settings.md`에 두며 공개 스킬에 고정하지 않습니다.
 - 외부 연계: `linear-qa`와 `sentry-observability`는 각각 서비스 접근 권한과 프로젝트 구성이 있어야 실제 읽기·쓰기 동작을 합니다. 연결이 없으면 확인된 코드·테스트·로그 범위만 보고하고, 외부 상태를 추정하지 않습니다.
 
 꺼진 스킬은 단순히 사용하지 않습니다. 필요 목적을 수행할 수 있는 다른 활성 스킬이나 일반 도구가 있으면 그 경로를 선택하되, 특정 스킬이 실행된 것처럼 표시하지 않습니다.

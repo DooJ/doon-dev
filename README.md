@@ -33,6 +33,7 @@
 | `code-commenting` | 공개 API와 복잡한 도메인 계약에 필요한 주석과 KDoc을 작성합니다. |
 | `android-architecture` | Android 계층 구조, 생명주기, 상태와 데이터 흐름 기준을 제공합니다. |
 | `kotlin-basics` | Kotlin의 타입, null-safety, 코루틴, 컬렉션과 네이밍 관례를 안내합니다. |
+| `app-store-release` | 스토어 배포 준비, 라이브러리·정책·처리방침·난독화 크래시 복원과 Git 배포 기록을 점검합니다. |
 | `linear-qa` | Linear에서 테스트 케이스, 회귀 실행과 버그 재검증 흐름을 운영합니다. |
 | `sentry-observability` | Sentry 릴리스 관측을 오류 분류, 이슈화와 수정 검증으로 연결합니다. |
 | `skill-inspector` | 외부 에이전트 스킬의 권한, 출처와 악성 동작 위험을 설치 전에 점검합니다. |

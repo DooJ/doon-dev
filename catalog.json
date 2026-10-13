@@ -70,6 +70,10 @@
     {
       "name": "codegraph",
       "path": "skills/codegraph"
+    },
+    {
+      "name": "app-store-release",
+      "path": "skills/app-store-release"
     }
   ],
   "runtime_contract": {
@@ -113,7 +117,8 @@
         "sentry-observability",
         "performance-diagnostics",
         "quality-constraints",
-        "runtime-observability"
+        "runtime-observability",
+        "app-store-release"
       ]
     },
     {
@@ -127,7 +132,7 @@
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "7.0.0",
+    "version": "7.1.0",
     "display_name": "DooN Development"
   }
 }
