@@ -132,7 +132,7 @@
   ],
   "plugin": {
     "name": "doon-dev",
-    "version": "7.1.0",
+    "version": "7.1.1",
     "display_name": "DooN Development"
   }
 }
